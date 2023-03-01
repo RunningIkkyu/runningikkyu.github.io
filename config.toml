@@ -49,7 +49,7 @@ rssFullContent = true
 
   [params.comments]
   enabled = true
-  provider = "utterances"
+  provider = "giscus"
 
     [params.comments.disqusjs]
 
@@ -80,6 +80,16 @@ rssFullContent = true
     [params.comments.giscus]
     reactionsEnabled = 1
     emitMetadata = 0
+    repo = "RunningIkkyu/runningikkyu.github.io"
+    repoID = "R_kgDOJDjz8A"
+    category = "Announcements"
+    categoryID = "DIC_kwDOJDjz8M4CUj8D"
+    mapping = "pathname"
+    strict=true
+    inputPosition = "top"
+    lang="en"
+    loading="lazy"
+    theme="preferred_color_scheme"
 
     [params.comments.gitalk]
 
