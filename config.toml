@@ -1,30 +1,17 @@
-baseurl = "https://example.com"
+baseurl = "https://runningikkyu.github.io"
 languageCode = "en-us"
 theme = "stack"
 paginate = 5
-title = "Example Site"
+title = "Ikkyu's Blog"
 disqusShortname = "hugo-theme-stack"
 DefaultContentLanguage = "en"
 hasCJKLanguage = false
 
 [languages.en]
 languageName = "English"
-title = "Example Site"
-description = "Example description"
+title = "Ikkyu's Blog"
+description = "Ikkyu's Blog"
 weight = 1
-
-[languages.zh-cn]
-languageName = "中文"
-title = "演示站点"
-description = "演示说明"
-weight = 2
-
-[languages.ar]
-languageName = "عربي"
-languagedirection = "rtl"
-title = "موقع تجريبي"
-description = "وصف تجريبي"
-weight = 3
 
 [permalinks]
 post = "/p/:slug/"
@@ -43,8 +30,8 @@ rssFullContent = true
   lastUpdated = "Jan 02, 2006 15:04 MST"
 
   [params.sidebar]
-  emoji = "🍥"
-  subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  emoji = "💻"
+  subtitle = "Simple is better than complex. \n- Now is better than never."
 
     [params.sidebar.avatar]
     enabled = true
@@ -62,12 +49,14 @@ rssFullContent = true
 
   [params.comments]
   enabled = true
-  provider = "disqus"
+  provider = "utterances"
 
     [params.comments.disqusjs]
 
     [params.comments.utterances]
-    issueTerm = "pathname"
+    issueTerm = "title"
+    repo = "RunningIkkyu/runningikkyu.github.io"
+    label = "Comment"
 
     [params.comments.remark42]
 
@@ -143,7 +132,7 @@ main = [ ]
   [[menu.social]]
   identifier = "github"
   name = "GitHub"
-  url = "https://github.com/CaiJimmy/hugo-theme-stack"
+  url = "https://github.com/runningikkyu"
 
     [menu.social.params]
     icon = "brand-github"
