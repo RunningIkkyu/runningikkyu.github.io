@@ -119,3 +119,71 @@ server without GUI.
 
 The "stack" theme supports many [comment systems](https://stack.jimmycai.com/config/comments). 
 
+There're two **open source** comment system that I prefered: 
+
+- utterance
+- [giscus](https://giscus.app/)
+
+
+`giscus` is a comment system based on Github Discussions, while `utterance` is based on github issues. 
+For me, Github Discussions is a perfect place to hold all comments for blog.
+Finnally I choose `giscus` for my blog's comment system.
+
+Steps to config `giscus` as your comment system:
+
+- Make the repository public.
+- Install the [**giscus**](https://github.com/apps/giscus) app on your repo.
+- [Turn on the Discussions feature](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/enabling-or-disabling-github-discussions-for-a-repository) for your repository.
+
+After these settings, you need to config giscus on your hugo project:
+
+
+Fill all options on [giscus](https://giscus.app/) site, you'll get a script tag like this:
+
+```html
+<script src="https://giscus.app/client.js"
+        data-repo="repo"
+        data-repo-id="repo-id"
+        data-category="Announcements"
+        data-category-id="categorie_id"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+```
+
+Let's convert that into `config.toml`:
+
+```toml
+[params.comments]
+enabled = true
+provider = "giscus"
+
+[params.comments.giscus]
+reactionsEnabled = 1
+emitMetadata = 0
+repo = "repo"
+repoID = "repo-id"
+category = "Announcements"
+categoryID = "categorie_id"
+mapping = "pathname"
+strict=true
+inputPosition = "top"
+lang="en"
+loading="lazy"
+theme="preferred_color_scheme"
+```
+
+
+Start the server and you'll see the comment widgets on the bottom of your posts:
+
+```
+hugo server -D --bind=0.0.0.0
+```
